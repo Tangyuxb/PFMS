@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎登陆</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="login.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body  class="bodystyle" >
+<header class="header_center">
+    <img src="../../img/logo.jpg" width="200" height="100"> </img>
+</header>
+<content>
+    <p class="p_style">互联网+个人资金账户管理系统</p>
+</content>
+    <div class="mid_form">
+           <p class="p_font">登&nbsp&nbsp&nbsp&nbsp录<span id="span_id" style="color:red;"></span></p>
+        <form class="bs-example bs-example-form" role="form">
+            <div class="div1">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="id" type="text" class="form-control">
+            </div><br>
+            </div>
+            <div class="div1">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control">
+            </div><br>
+            </div>
+            <div class="div2">
+                <div>
+                    验证码：<div> <div class="code" id="checkCode" onclick="createCode()" ></div>
+                          <input  style="float:left;width: 100px;margin-left: 50px" type="text"  id="inputCode" /></div>
+                            <!--<td><a  href="#" onclick="createCode()">看不清换一张</a></td>-->
+                             
+                </div>
+            </div>
+            <div class="div2">
+                <input type="button" onclick="validate()" value="登录" style="width: 300px; align-content: center;height: 40px;background-color: darkorange">
+                
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript"src="../../js/jquery.js"></script>
+<script type="text/javascript"src="../../js/tether.js"></script>
+<script type="text/javascript"src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="checkCoad.js"></script>
+</html>

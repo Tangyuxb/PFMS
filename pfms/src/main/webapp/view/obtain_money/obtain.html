@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取款</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="obtain.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main">
+    <!--左部导航-->
+    <div id="left">
+        <div id="news">
+            <div class="left-heading">
+                <p>新 闻</p>
+            </div>
+            <div id="news-list">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">中软历害了</a></li>
+                    <li class="list-group-item"><a href="#">唐玉厉害了</a></li>
+                    <li class="list-group-item"><a href="#">100婚100婚</a></li>
+                    <li class="list-group-item"><a href="#">看一点有用的吧</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="left-heading">
+                <p>操作菜单</p>
+            </div>
+            <div id="left-nav">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">查询交易记录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">存款</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">取款</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">转账</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">查看个人信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">修改个人信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="firm()">修改密码</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="firm()">注销</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">查询交易记录</p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置</p>
+                <ol>
+                    <li><a href="#" class="breadcrumb-item">用户操作/</a></li>
+                    <li><a class="breadcrumb-item active">取款</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="right-head-title">
+            <p class="h3">取款</p>
+        </div>
+        <div id="table-container">
+            <div class="row">
+                <div class="item-tip col-md-2">取款时间</div>
+                <div id="time" class="item-content col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="item-tip col-md-2">取款金额</div>
+                <div class="item-content col-md-4">
+                    <input type="number" placeholder="输入金额">
+                </div>
+            </div>
+
+            <button id="btn-submit" type="button" class="btn btn-primary">取款</button>
+        </div>
+
+
+    </div>
+</div>
+
+    <div id="foot">
+        <footer>
+            <p>版权所有 TEAM5</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    删除处理中，请稍后...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+<script type="text/javascript">
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        + " " + date.getHours() + seperator2 + date.getMinutes()
+        + seperator2 + date.getSeconds();
+    $('#time').text(currentdate);
+</script>
+</html>

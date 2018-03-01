@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>修改个人信息part</title>
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/tether.css" rel="stylesheet" />
+		<link href="change_xinxi.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="right">
+			<div id="right-heading">
+				<p id="right-heading-title">修改个人信息</p>
+				<div id="right-head-nav">
+					<p id="nav-bread-title">当前位置</p>
+					<ol>
+						<li>
+							<a href="#" class="breadcrumb-item">用户操作/</a>
+						</li>
+						<li>
+							<a class="breadcrumb-item active">修改个人信息</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+
+			<div id="change_personalinfo">
+				<table class="table table-bordered">
+					<thead>
+						<th class="table-title" colspan="2">修改个人信息</th>
+					</thead>
+					<tr>
+						<td>姓名</td>
+						<td id="name"></td>
+					</tr>
+					<tr>
+						<td>出生日期</td>
+						<td id="birthday"></td>
+					</tr>
+					<tr>
+						<td>性别</td>
+						<td id="sex"></td>
+					</tr>
+					<tr>
+						<td>家庭住址</td>
+						<td><input type="text" id="address" name="pwd1">
+							<span style="color: orangered;font-weight: bold;">&nbsp;*</span>
+						</td>
+					</tr>
+					<tr>
+						<td>手机号码</td>
+						<td><input type="text" id="phone" name="pwd1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+							<span style="color: orangered;font-weight: bold;">&nbsp;*</span>
+						</td>
+					</tr>
+					<tr>
+						<td>身份证号</td>
+						<td id="idnumber"></td>
+					</tr>
+				</table>
+				<button id="update_info" type="button" onclick="updateInfo()" class="btn btn-primary">提交</button>
+			</div>
+			
+
+
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">提示</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+					</div>
+					<div class="modal-body">
+						修改个人信息成功
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/tether.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+	<script type="text/javascript" src="../../js/dialog.js"></script>
+	<script type="text/javascript">
+		function updateInfo(){
+			console.log("点击了修改信息");
+			$.post("/pfms/user/checkinfo.do",
+			{
+				userId:"13883485018",
+				phone:$("#phone").val(),
+				address:$("#address").val()
+			},
+			function(data){
+				var json = jQuery.parseJSON(data);
+				console.log(json);
+				if (json.status == "OK") {
+					$("#exampleModal").modal('show');
+				} else {
+					return ;
+				}
+			}
+			);
+		}
+		
+		window.onload = function(){
+			$.post("/pfms/user/info.do",
+					{
+						userId:"13883485018",
+					},
+					function(data){
+						var json = jQuery.parseJSON(data);
+						console.log(json);
+						$("#name").html(json.name);
+						$("#birthday").html(json.birthday);
+						$("#sex").html(json.sex);
+						$("#idnumber").html(json.idCard);
+					}
+					);
+		}
+	</script>
+
+</html>

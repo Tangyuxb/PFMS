@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>所有用户</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="allaccount.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main" class="container-fluid">
+    <!--左部导航-->
+    <div id="left">
+        <div id="left-heading">
+            <p>后台管理</p>
+        </div>
+        <div id="left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a href="..\find_account\find_account.html"  class="nav-link active">所有用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\locked_account\locked_account.html" class="nav-link">已冻结用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\created_account\created_account.html" class="nav-link">已开启用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_account\kaihu.html" class="nav-link">开户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\change_pwd\detail_info.html" class="nav-link">修改个人密码</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_manage\news_manage.html" class="nav-link ">新闻管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="firm()">注销</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">所有用户 </p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置</p>
+                <ol>
+                    <li><a class="breadcrumb-item">后台管理></a></li>
+                    <li><a  href="#" class="breadcrumb-item table-active">所有账户</a></li>
+                    <li class="breadcrumb-item"> >查看个人信息</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="news-table-container">
+            <table class="tab-location">
+                <tr class="news-item">
+                    <td class="news-title">账户</td>
+                    <td class="news-time">23456789345678</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">账户状态</td>
+                    <td class="news-time">激活</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">账户余额</td>
+                    <td class="news-time">数量太多无法显示</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">姓名</td>
+                    <td class="news-time">唐玉</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">出生日期</td>
+                    <td class="news-time">2017年6月27日</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">性别</td>
+                    <td class="news-time">女</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">家庭住址</td>
+                    <td class="news-time">重庆南岸</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">手机号码</td>
+                    <td class="news-time">12345678905</td>
+                </tr>
+                <tr class="news-item">
+                    <td class="news-title">身份证号</td>
+                    <td class="news-time">12345679012345678</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="foot">
+    <footer>
+        <p>版权所有 TEAM5</p>
+    </footer>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新闻</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="add_news.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main">
+    <!--左部导航-->
+    <div id="left">
+        <div id="left-heading">
+            <p>后台管理</p>
+        </div>
+        <div id="left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a href="..\find_account\find_account.html" class="nav-link">所有用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\locked_account\locked_account.html" class="nav-link">已冻结用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\created_account\created_account.html" class="nav-link">已开启用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_account\kaihu.html" class="nav-link">开户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\change_pwd\detail_info.html" class="nav-link">修改个人密码</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_manage\news_manage.html" class="nav-link active">新闻管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="firm()">注销</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">后台管理</p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置</p>
+                <ol>
+                    <li><a href="#" class="breadcrumb-item">后台管理/</a></li>
+                    <li><a href="../new_manage/news_manage.html" class="breadcrumb-item">新闻管理/</a></li>
+                    <li><a class="breadcrumb-item active">添加新闻</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="news-table-container">
+            <form>
+                <fieldset class="form-group">
+                    <label for="news-title">标题</label>
+                    <input type="email" class="form-control" id="news-title" placeholder="请输入标题">
+                    <small class="text-muted">标题应该在十五个字以内</small>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="news-abstract">摘要</label>
+                    <textarea type="email" class="form-control" id="news-abstract">
+                    </textarea>
+                    <small class="text-muted">摘要应该在五十个字以内</small>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="news-abstract">正文</label>
+                    <textarea type="email" class="form-control" id="news-content">
+                    </textarea>
+                    <small class="text-muted">请输入正文</small>
+                </fieldset>
+
+                <button type="submit" onclick="save()" class="btn btn-primary">保存</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="foot">
+    <footer>
+        <p>版权所有 TEAM5</p>
+    </footer>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+</html>

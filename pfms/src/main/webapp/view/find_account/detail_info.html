@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>已冻结账户个人信息</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="find_account.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main" class="container-fluid">
+    <!--左部导航-->
+    <div id="left">
+        <div id="left-heading">
+            <p>后台管理</p>
+        </div>
+        <div id="left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a href="..\find_account\find_account.html"  class="nav-link active">所有用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\locked_account\locked_account.html" class="nav-link">已冻结用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\created_account\created_account.html" class="nav-link ">已开启用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_account\kaihu.html" class="nav-link">开户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\change_pwd\detail_info.html" class="nav-link">修改个人密码</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_manage\news_manage.html" class="nav-link ">新闻管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="firm()">注销</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">后台管理</p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置：</p>
+                <ol>
+                    <li><a  class="breadcrumb-item active">后台管理</a></li>
+                    <li><a href="#" class="breadcrumb-item">->已开户用户</a></li>
+                    <li><a class="breadcrumb-item active">->查看个人信息</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="info-table-container">
+            <table id="info-table">
+                <tr>
+                    <td class="info-th">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户</td>
+                    <td class="news-index">1</td>
+                </tr>
+                <tr>
+                    <td class="info-th">账户状态</td>
+                    <td class="news-title">已冻结</td>
+                </tr>
+                <tr>
+                    <td class="info-th">账户余额</td>
+                    <td class="news-title">99999999.99</td>
+                </tr>
+                <tr>
+                    <td class="info-th">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+                    <td class="news-time">王浩</td>
+                </tr>
+                <tr>
+                    <td class="info-th">出生日期</td>
+                    <td class="news-time">1995.9.8</td>
+                </tr>
+                <tr>
+                    <td class="info-th">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+                    <td class="news-time">男</td>
+                </tr>
+                <tr>
+                    <td class="info-th">家庭住址</td>
+                    <td class="info-span">重庆市巫山县跑马村66号</td>
+                </tr>
+                <tr>
+                    <td class="info-th">手机号码</td>
+                    <td class="news-time">13224929331</td>
+                </tr>
+                <tr>
+                    <td class="info-th">身份证号</td>
+                    <td class="news-identity">5002164199526595</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="info-foot">
+    <p>版权所有 TEAM5</p>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开户</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="kaihu.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main" class="container-fluid">
+    <!--左部导航-->
+    <div id="left">
+        <div id="left-heading">
+            <p>后台管理</p>
+        </div>
+        <div id="left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a href="..\find_account\find_account.html"  class="nav-link ">所有用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\locked_account\locked_account.html" class="nav-link">已冻结用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\created_account\created_account.html" class="nav-link ">已开启用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_account\kaihu.html" class="nav-link active">开户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\change_pwd\detail_info.html" class="nav-link">修改个人密码</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_manage\news_manage.html" class="nav-link ">新闻管理</a>
+                </li>
+                <li class="nav-item">
+                    <!--<a href="#" class="nav-link" onclick="logout()">注销</a>-->
+                    <a href="#" class="nav-link" onclick="firm()">注销</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">开户</p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置</p>
+                <ol>
+                    <li><a href="#" class="breadcrumb-item">后台管理</a></li>
+                    <li><a class="breadcrumb-item active">开户</a></li>
+                </ol>
+            </div>
+        </div> <div id="info-table-container">
+        <table id="info-table">
+            <tr>
+                <td class="info-th">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</td>
+                <td class="news-index"><input type="password" name="pwd1"><span class="input-require">*至少包含字母和数字，最短6位字符，区分大小写</span></td>
+            </tr>
+            <tr>
+                <td class="info-th">确认密码</td>
+                <td class="news-title"><input type="password" name="pwd2"><span class="input-require">*请再次输入密码</span></td>
+            </tr>
+            <tr>
+                <td class="info-th">开户金额</td>
+                <td class="news-index"><input type="text" name="money"></td>
+            </tr>
+            <tr>
+                <td class="info-th">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+                <td class="news-title"><input type="text" name="username"><span class="input-require">*</span></td>
+            </tr>
+            <tr>
+                <td class="info-th">出生日期</td>
+                <td class="news-time"><div class="date1">
+                    <select onchange="setDays()">
+                    </select>
+                    <span>年</span>
+                    <select onchange="setDays()">
+                    </select>
+                    <span>月</span>
+                    <select>
+                    </select>
+                    <span>日</span>
+                </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="info-th">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+                <td class="news-time"><input id="man" type="radio" checked="checked" name="1" />男
+                    <input id="woman" type="radio"  name="1"/>女</td>
+            </tr>
+            <tr>
+                <td class="info-th">家庭住址</td>
+                <td class="info-span"><input type="text" name="address"><span class="input-require">*</span></td>
+            </tr>
+            <tr>
+                <td class="info-th">手机号码</td>
+                <td class="news-time"><input type="text" name="telephone"><span class="input-require">*</span></td>
+            </tr>
+            <tr>
+                <td class="info-th">身份证号</td>
+                <td class="news-identity"><input type="text" name="idnumber"><span class="input-require">*</span></td>
+            </tr>
+        </table>
+    </div>
+        </div>
+    </div>
+</div>
+<div>
+    <button id="btn-submit" type="submit" class="btn btn-primary">提交</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                处理中，请稍后...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                确认注销吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    <a href="..\login\login.html" style="color: white">确认</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="foot">
+    <footer>
+        <p>版权所有 TEAM5</p>
+    </footer>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<script type="text/javascript">
+
+    function checkForm(form)
+    {
+        if(form.username.value == "") {
+            alert("Error: Username cannot be blank!");
+            form.username.focus();
+            return false;
+        }
+        if(form.address.value == "") {
+            alert("Error: address cannot be blank!");
+            form.address.focus();
+            return false;
+        }
+        if(form.telephone.value == "") {
+            alert("Error: telephone cannot be blank!");
+            form.telephone.focus();
+            return false;
+        }
+        if(form.idnumber.value == "") {
+            alert("Error: idnumber cannot be blank!");
+            form.idnumber.focus();
+            return false;
+        }
+        re = /^\w+$/;
+        if(!re.test(form.username.value)) {
+            alert("Error: Username must contain only letters, numbers and underscores!");
+            form.username.focus();
+            return false;
+        }
+
+
+        if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+            if(form.pwd1.value.length < 6) {
+                alert("Error: Password must contain at least six characters!");
+                form.pwd1.focus();
+                return false;
+            }
+            if(form.pwd1.value == form.username.value) {
+                alert("Error: Password must be different from Username!");
+                form.pwd1.focus();
+                return false;
+            }
+            re = /[0-9]/;
+            if(!re.test(form.pwd1.value)) {
+                alert("Error: password must contain at least one number (0-9)!");
+                form.pwd1.focus();
+                return false;
+            }
+            re = /[a-z]/;
+            if(!re.test(form.pwd1.value)) {
+                alert("Error: password must contain at least one lowercase letter (a-z)!");
+                form.pwd1.focus();
+                return false;
+            }
+            re = /[A-Z]/;
+            if(!re.test(form.pwd1.value)) {
+                alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                form.pwd1.focus();
+                return false;
+            }
+        } else {
+            alert("Error: Please check that you've entered and confirmed your password!");
+            form.pwd1.focus();
+            return false;
+        }
+
+        alert("You entered a valid password: " + form.pwd1.value);
+        return true;
+    }
+
+
+
+    window.onload=function(){
+        var selects = document.getElementsByTagName("select");//通过标签名获取select对象
+        var date = new Date();
+        var nowYear = date.getFullYear();//获取当前的年
+        for(var i=nowYear-100;i<=nowYear;i++){
+            var optionYear = document.createElement("option");
+            optionYear.innerHTML=i;
+            optionYear.value=i;
+            selects[0].appendChild(optionYear);
+        }
+        for(var i=1;i<=12;i++){
+            var optionMonth = document.createElement("option");
+            optionMonth.innerHTML=i;
+            optionMonth.value=i;
+            selects[1].appendChild(optionMonth);
+        }
+        getDays(selects[1].value,selects[0].value,selects);
+    }
+    // 获取某年某月存在多少天
+    function getDaysInMonth(month,year){
+        var days;
+        if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12) {
+            days=31;
+        }else if (month==4 || month==6 || month==9 || month==11){
+            days=30;
+        }else{
+            if ((year%4 == 0 && year%100 != 0) || (year%400 == 0)) {     // 判断是否为润二月
+                days=29;
+            }else {
+                days=28;
+            }
+        }
+        return days;
+    }
+    function setDays(){
+        var selects = document.getElementsByTagName("select");
+        var year = selects[0].options[selects[0].selectedIndex].value;
+        var month = selects[1].options[selects[1].selectedIndex].value;
+        getDays(month,year,selects);
+    }
+    function getDays(month,year,selects){
+        var days = getDaysInMonth(month,year);
+        selects[2].options.length = 0;
+        for(var i=1;i<=days;i++){
+            var optionDay = document.createElement("option");
+            optionDay.innerHTML=i;
+            optionDay.value=i;
+            selects[2].appendChild(optionDay);
+        }
+    }
+
+</script>
+</html>

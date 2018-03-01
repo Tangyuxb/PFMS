@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人密码</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/tether.css" rel="stylesheet"/>
+    <link href="user.css" rel="stylesheet">
+</head>
+<body>
+<!--顶部导航-->
+<div id="header">
+    <img id="logo" src="../../img/logo.jpg">
+    <div id="heading">
+        <p class="h1">互联网+个人资金管理体系</p>
+    </div>
+</div>
+<!--主内容面板-->
+<div id="main" class="container-fluid">
+    <!--左部导航-->
+    <div id="left">
+        <div id="left-heading">
+            <p>后台管理</p>
+        </div>
+        <div id="left-nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a href="..\find_account\find_account.html" class="nav-link">所有用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\locked_account\locked_account.html" class="nav-link">已冻结用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\created_account\created_account.html" class="nav-link">已开启用户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_account\kaihu.html" class="nav-link">开户</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\change_pwd\detail_info.html" class="nav-link active">修改个人密码</a>
+                </li>
+                <li class="nav-item">
+                    <a href="..\new_manage\news_manage.html" class="nav-link">新闻管理</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="firm()">注销</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div id="right-heading">
+            <p id="right-heading-title">修改个人密码</p>
+            <div id="right-head-nav">
+                <p id="nav-bread-title">当前位置：</p>
+                <ol>
+                    <li><a href="#" class="breadcrumb-item">后台管理</a></li>
+                    <li><a class="breadcrumb-item active">->修改个人密码</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="news-table-container">
+            <table id="info-table">
+                <tr>
+                    <td class="news-index">当前密码</td>
+                    <td class="news-time"><input type="password" name="pwd" id="pwd_old" runat="server"/></td>
+                </tr>
+                <tr>
+                    <td class="news-index">新的密码</td>
+                    <td class="news-time"><input type="password" name="pwd" id="pwd_new" runat="server"/></td>
+                </tr>
+                <tr>
+                    <td class="news-index">确认密码</td>
+                    <td class="news-time"><input type="password" name="pwd" id="pwd_commit" runat="server"/></td>
+                </tr>
+            </table>
+            <button id="btn_modify" style="margin-top: 20px;" type="button" class="btn btn-primary">提交</button>
+        </div>
+    </div>
+</div>
+
+<div id="foot">
+    <footer>
+        <p>版权所有 TEAM5</p>
+    </footer>
+</div>
+
+</body>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/tether.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/dialog.js"></script>
+</html>
